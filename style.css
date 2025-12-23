@@ -5,8 +5,9 @@
 }
 :root {
     --text-color: white;
-    --bg-gradient: linear-gradient(to bottom, rgb(0, 0, 0), rgb(54, 48, 48));
+    --bg-gradient: linear-gradient(to right, rgb(0, 0, 0), rgb(54, 48, 48));
     --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
     --surface-color-hover: rgba(104, 102, 102, 0.5);
     --highlight-color: rgba(255, 255, 255, 0.2);
 }
@@ -14,10 +15,10 @@
 .light {
     --text-color: black;
     --bg-gradient: linear-gradient(to left, white, rgb(122, 169, 190));
-    --stroke-color: rgba(0, 0, 0, 0.05);
+    --stroke-color: rgba(0, 0, 0, 0.5);
     --surface-color: rgba(0, 0, 0, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.1);
     --highlight-color: rgba(0, 0, 0, 0.1);
-
 }
 
 body{
@@ -71,13 +72,67 @@ body *{
 }
 #social a:hover{
     background: var(--highlight-color);
+}
 
+#switch{
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+
+#switch button{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#switch button ion-icon{
+    font-size: 20px;
+    color: #000;
+}
+
+#switch button ion-icon[name="sunny"]{
+    display: none;
+}
+
+.light #switch button ion-icon[name="moon"]{
+    display: none;
+}
+
+.light #switch button ion-icon[name="sunny"]{
+    display: block;
+}
+.light #switch button{
+    left: initial;
+    right: 0; 
+}
+
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
 }
 
 footer{
     text-align: center;
     padding: 24px 0;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 /* lista: */
