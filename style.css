@@ -3,17 +3,32 @@
     padding: 0%;
     box-sizing: border-box;
 }
+:root {
+    --text-color: white;
+    --bg-gradient: linear-gradient(to bottom, rgb(0, 0, 0), rgb(54, 48, 48));
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color-hover: rgba(104, 102, 102, 0.5);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+    --text-color: black;
+    --bg-gradient: linear-gradient(to left, white, rgb(122, 169, 190));
+    --stroke-color: rgba(0, 0, 0, 0.05);
+    --surface-color: rgba(0, 0, 0, 0.1);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+
+}
 
 body{
-    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(54, 48, 48));
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: var(--bg-gradient);
     background-attachment: fixed;
-    }
+    background-repeat: no-repeat;
+}
 
 body *{
     font-family: "Inter", sans-serif;
-    color: white;
+    color: var(--text-color);
 }
 #container{
     width: 360px;
@@ -22,7 +37,7 @@ body *{
     padding: 0 24px;
 }
 #a{
-border: 1px solid white;
+    border: 1px solid white;
 }
 
 #perfil{
@@ -35,9 +50,8 @@ border: 1px solid white;
 }
 
 #perfil p{
-    font-weight: 500px; ;
+    font-weight: 500;
     line-height: 24px;
-     
 }
 
 #social{
@@ -53,11 +67,11 @@ border: 1px solid white;
     justify-content: center;
     padding: 16px;
     border-radius: 50%;
-    transition: background 0.2;
+    transition: background 0.2s;
 }
 #social a:hover{
-    background: rgba(255, 255, 255, 0.2);
-    
+    background: var(--highlight-color);
+
 }
 
 footer{
@@ -65,7 +79,6 @@ footer{
     padding: 24px 0;
     font-size: 15px;
 }
-
 
 /* lista: */
 ul{
@@ -82,9 +95,9 @@ ul li a{
     padding: 16px 24px;
     align-items: center;
     
-    /*fundo do  link*/
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    /*fundo do link*/
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
     border-radius: 6px;
     
     text-decoration: none;
@@ -94,7 +107,6 @@ ul li a{
 }
 
 ul li a:hover{
-background: rgba(255, 255, 255, 0.05);
-border: 1.6px solid white ;
+    background: var(--surface-color-hover);
+    border: 1.6px solid var(--text-color);
 }
-
